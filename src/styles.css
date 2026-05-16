@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-cream font-sans text-stone-800 dark:bg-stone-950 dark:text-stone-100;
+  }
+
+  ::selection {
+    @apply bg-sage-200 text-stone-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-stone-800 px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-sage-200 focus:ring-offset-2 dark:bg-stone-100 dark:text-stone-950 dark:hover:bg-white;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-stone-200 bg-white/70 px-5 py-3 text-sm font-semibold text-stone-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-sage-50 focus:outline-none focus:ring-2 focus:ring-sage-200 focus:ring-offset-2 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-200 dark:hover:bg-stone-800;
+  }
+
+  .soft-card {
+    @apply rounded-xl border border-stone-200/75 bg-white/55 p-6 shadow-soft transition hover:bg-white/80 dark:border-stone-800 dark:bg-stone-900/70 dark:hover:bg-stone-900;
+  }
+
+  .quiet-row {
+    @apply rounded-xl border border-stone-200/75 bg-white/45 p-5 transition hover:bg-white/75 dark:border-stone-800 dark:bg-stone-900/55 dark:hover:bg-stone-900;
+  }
+
+  .course-card {
+    @apply rounded-xl border border-stone-200/75 bg-white/50 p-5 transition hover:bg-white/80 dark:border-stone-800 dark:bg-stone-900/60 dark:hover:bg-stone-900;
+  }
+
+  .connect-form {
+    @apply rounded-xl border border-stone-300/80 bg-white/55 p-6 shadow-soft transition dark:border-stone-700 dark:bg-stone-900/65;
+  }
+
+  .tag {
+    @apply rounded-full border border-stone-200 bg-sage-50 px-3 py-1 text-xs font-medium text-stone-600 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-300;
+  }
+
+  .text-link {
+    @apply underline decoration-stone-300 underline-offset-4 transition hover:text-stone-950 hover:decoration-stone-600 dark:decoration-stone-700 dark:hover:text-white dark:hover:decoration-stone-300;
+  }
+
+  .icon-link {
+    @apply inline-flex size-9 items-center justify-center rounded-full border border-stone-200 bg-white/45 text-stone-500 transition hover:-translate-y-0.5 hover:bg-lavender-100 hover:text-stone-900 dark:border-stone-800 dark:bg-stone-900/70 dark:text-stone-300 dark:hover:bg-stone-800 dark:hover:text-white;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-stone-600 dark:text-stone-300;
+  }
+
+  .form-input {
+    @apply mt-2 w-full rounded-xl border border-stone-300 bg-cream/90 px-4 py-3 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-stone-500 focus:bg-white focus:ring-4 focus:ring-lavender-100 dark:border-stone-700 dark:bg-stone-950/75 dark:text-stone-100 dark:focus:border-stone-500 dark:focus:bg-stone-950 dark:focus:ring-stone-800;
+  }
+
+  .page-header {
+    @apply mb-10 max-w-2xl border-b border-stone-200/75 pb-8 dark:border-stone-800;
+  }
+
+  .eyebrow {
+    @apply text-sm font-medium text-stone-500 dark:text-stone-400;
+  }
+
+  .page-title {
+    @apply mt-3 font-display text-3xl font-semibold tracking-tight text-stone-900 dark:text-stone-50;
+  }
+
+  .page-description {
+    @apply mt-4 text-base leading-7 text-stone-600 dark:text-stone-300;
+  }
+}
