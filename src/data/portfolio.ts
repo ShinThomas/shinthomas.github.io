@@ -32,9 +32,9 @@ export const profile = {
   description:
     'Interested in machine learning, AI, computer vision, and applied research.',
   email: 'thshin@bu.edu',
-  github: 'https://github.com/your-username',
-  linkedin: 'https://www.linkedin.com/in/your-linkedin',
-  instagram: 'https://www.instagram.com/your-instagram',
+  github: 'https://github.com/ShinThomas',
+  linkedin: 'https://www.linkedin.com/in/shinthomas/',
+  instagram: 'https://www.instagram.com/the_thomas_shin/',
 };
 
 export const navigation = [
