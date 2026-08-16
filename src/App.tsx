@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer';
 import { Navbar } from './components/Navbar';
-import { ConnectPage } from './pages/ConnectPage';
 import { CourseReviewsPage } from './pages/CourseReviewsPage';
 import { HomePage } from './pages/HomePage';
 import { ProjectsPage } from './pages/ProjectsPage';
@@ -10,7 +9,6 @@ const routes = {
   '/': HomePage,
   '/projects': ProjectsPage,
   '/course-reviews': CourseReviewsPage,
-  '/connect': ConnectPage,
 };
 
 export type RoutePath = keyof typeof routes;
@@ -35,9 +33,9 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cream text-stone-800 antialiased transition-colors duration-300 dark:bg-stone-950 dark:text-stone-100">
+    <div className="site-shell">
       <Navbar activeRoute={route} />
-      <main className="mx-auto min-h-[calc(100vh-9rem)] max-w-4xl px-5 pb-16 pt-28 sm:px-6 lg:px-8">
+      <main className="site-main">
         <Page />
       </main>
       <Footer />

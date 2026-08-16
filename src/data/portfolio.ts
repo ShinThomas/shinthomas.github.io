@@ -4,8 +4,10 @@ import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 export type ProjectItem = {
   title: string;
   dateRange: string;
+  shortDescription: string;
   description: string;
-  tags: string[];
+  details: string[];
+  tools: string[];
 };
 
 export type CourseReview = {
@@ -14,10 +16,12 @@ export type CourseReview = {
   name: string;
   professor: string;
   concentration: string;
+  category: 'Data Science' | 'Statistics' | 'Math' | 'Writing' | 'Other';
   difficulty: number;
   learningValue: number;
   enjoyment: number;
   coveredMaterial: string[];
+  review?: string;
 };
 
 export type SocialLink = {
@@ -28,9 +32,9 @@ export type SocialLink = {
 
 export const profile = {
   name: 'Thomas Shin',
-  title: 'Data Science and Statistics student at Boston University.',
+  title: 'Data Science + Statistics',
   description:
-    'Interested in machine learning, AI, computer vision, and applied research.',
+    'I like using data, statistics, and machine learning to explore useful problems across research, technology, healthcare, and sports.',
   email: 'thshin@bu.edu',
   github: 'https://github.com/ShinThomas',
   linkedin: 'https://www.linkedin.com/in/shinthomas/',
@@ -41,7 +45,6 @@ export const navigation = [
   { label: 'Home', href: '#/' },
   { label: 'Projects', href: '#/projects' },
   { label: 'Course Reviews', href: '#/course-reviews' },
-  { label: 'Connect', href: '#/connect' },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -55,79 +58,156 @@ export const projects: ProjectItem[] = [
   {
     title: 'Lverage Project Data Pipeline',
     dateRange: 'May 2026 - Present',
+    shortDescription:
+      'Comparative genomics pipeline for predicting transcription factor DNA-binding motifs.',
     description:
       'Comparative genomics data pipeline for predicting transcription factor DNA-binding motifs across orthologous species. Includes a GUI to make the workflow easier to use.',
-    tags: ['Data pipelines', 'OOP', 'Bioinformatics', 'GUI development'],
+    details: [
+      'Worked on a comparative genomics workflow centered on transcription factor DNA-binding motifs.',
+      'Structured the pipeline around reusable data-processing pieces rather than one-off scripts.',
+      'Built a GUI layer to make the workflow easier to run and inspect.',
+    ],
+    tools: ['Data pipelines', 'OOP', 'Bioinformatics', 'GUI development'],
   },
   {
     title: 'Boston Cyclists Union - Biking Safety',
     dateRange: 'Jan 2026 - May 2026',
+    shortDescription:
+      'ETL and geospatial analysis combining ridership, bike count, and crash records.',
     description:
       'Built ETL pipelines combining Bluebikes ridership, municipal bike counts, and crash records into a centralized analytics database. Analyzed temporal and geospatial patterns to support bike safety mapping and infrastructure insights.',
-    tags: ['ETL', 'Geospatial analysis', 'Exploratory data analysis', 'SQL'],
+    details: [
+      'Combined Bluebikes ridership, municipal bike counts, and crash records into one analytics workflow.',
+      'Prepared data for temporal and geospatial analysis around biking safety patterns.',
+      'Used the resulting dataset to support mapping and infrastructure-oriented insights.',
+    ],
+    tools: ['ETL', 'Geospatial analysis', 'Exploratory data analysis', 'SQL'],
   },
   {
     title: 'Detecting Sarcasm',
     dateRange: 'Feb 2026 - Apr 2026',
+    shortDescription:
+      'Comparison of classical machine learning and transformer-based models for sarcasm detection.',
     description:
       'Compared classical machine learning and transformer-based models for sarcasm detection in news headlines. Explored how different text representations affect performance on subtle language cues.',
-    tags: ['TF-IDF', 'BERT', 'Machine learning', 'NLP'],
+    details: [
+      'Compared traditional text representations with transformer-based approaches.',
+      'Focused on news headlines, where sarcasm depends on subtle language cues.',
+      'Evaluated how model choice and representation changed performance.',
+    ],
+    tools: ['TF-IDF', 'BERT', 'Machine learning', 'NLP'],
   },
   {
     title: 'Ecommerce Conversion Analytics',
     dateRange: 'Mar 2026 - Apr 2026',
+    shortDescription:
+      'Product analytics and machine learning pipeline for conversion behavior.',
     description:
       'Built a product analytics and machine learning pipeline on millions of user events. Analyzed conversion funnels and developed a model to identify high-intent users.',
-    tags: ['Product analytics', 'Logistic regression', 'Feature engineering', 'A/B metrics'],
+    details: [
+      'Worked with millions of user events to study product conversion behavior.',
+      'Analyzed funnel patterns and signals associated with high-intent users.',
+      'Developed a modeling workflow around feature engineering and conversion metrics.',
+    ],
+    tools: ['Product analytics', 'Logistic regression', 'Feature engineering', 'A/B metrics'],
   },
   {
     title: 'NHL Power Play Success Prediction',
     dateRange: 'Dec 2025',
+    shortDescription:
+      'Sports analytics model predicting whether NHL power plays result in goals.',
     description:
       'Predicted whether NHL power play opportunities would result in goals using game context and team performance data. The project combined sports analytics with practical model evaluation.',
-    tags: ['Sports analytics', 'Classification', 'Feature engineering', 'Model evaluation'],
+    details: [
+      'Modeled power play outcomes using game context and team performance data.',
+      'Framed the task as a classification problem with practical evaluation concerns.',
+      'Used hockey data as a way to connect sports intuition with model behavior.',
+    ],
+    tools: ['Sports analytics', 'Classification', 'Feature engineering', 'Model evaluation'],
   },
   {
     title: 'Physical Therapy Intelligence',
     dateRange: 'May 2025 - Dec 2025',
+    shortDescription:
+      'Computer vision and retrieval system for physical therapy movement analysis.',
     description:
       'Built a computer vision and RAG system for analyzing physical therapy movement and exercise signals. Designed supporting data infrastructure for real-time inference and clinician-facing insights.',
-    tags: ['OpenCV', 'RAG', 'PostgreSQL', 'Real-time inference'],
+    details: [
+      'Built computer vision pieces for analyzing physical therapy movement and exercise signals.',
+      'Used retrieval-augmented generation concepts to support contextual insight generation.',
+      'Designed supporting data infrastructure for real-time inference workflows.',
+    ],
+    tools: ['OpenCV', 'RAG', 'PostgreSQL', 'Real-time inference'],
   },
   {
     title: 'Formula 1 Tire Strategy Optimizer',
     dateRange: 'Oct 2025 - Nov 2025',
+    shortDescription:
+      'Race strategy tool comparing pit stop approaches for Grand Prix circuits.',
     description:
       'Created a tool that recommends optimized pit stop strategies for Grand Prix circuits using historical race data. The system compares aggressive, balanced, and conservative race strategies.',
-    tags: ['FastF1', 'Simulation', 'Optimization', 'Data visualization'],
+    details: [
+      'Used historical race data to recommend pit stop strategies by circuit.',
+      'Compared aggressive, balanced, and conservative strategy profiles.',
+      'Presented model outputs in a way that connects data with race-day tradeoffs.',
+    ],
+    tools: ['FastF1', 'Simulation', 'Optimization', 'Data visualization'],
   },
   {
     title: 'MLB Predicting WAR',
     dateRange: 'Sep 2025',
+    shortDescription:
+      'Baseball modeling project exploring which metrics help predict Wins Above Replacement.',
     description:
       'Explored which baseball metrics are most useful for predicting Wins Above Replacement. The project combined data cleaning, feature selection, and machine learning with baseball analysis.',
-    tags: ['Feature selection', 'Regression', 'Data cleaning', 'Model interpretation'],
+    details: [
+      'Cleaned baseball performance data for a WAR prediction workflow.',
+      'Explored feature selection as part of understanding which metrics mattered most.',
+      'Used model interpretation to connect results back to baseball analysis.',
+    ],
+    tools: ['Feature selection', 'Regression', 'Data cleaning', 'Model interpretation'],
   },
   {
     title: 'Linear Regression Model',
     dateRange: 'Jun 2025',
+    shortDescription:
+      'Linear regression implemented from scratch with gradient descent.',
     description:
       'Implemented linear regression from scratch in Python using gradient descent. Used a simple study-time dataset to train the model and visualize the best-fit line.',
-    tags: ['Python', 'Gradient descent', 'NumPy', 'Data visualization'],
+    details: [
+      'Implemented linear regression directly rather than relying on a high-level model API.',
+      'Used gradient descent to fit a simple study-time dataset.',
+      'Visualized the fitted line to make the optimization behavior easier to understand.',
+    ],
+    tools: ['Python', 'Gradient descent', 'NumPy', 'Data visualization'],
   },
   {
     title: 'Data Science Job Salaries Analysis',
     dateRange: 'Nov 2024 - Dec 2024',
+    shortDescription:
+      'Graph-based analysis of job titles, locations, and salaries in data science.',
     description:
       'Analyzed relationships between job titles, company locations, and salaries in the data science job market. Used graph-based analysis and salary comparisons to study role and location patterns.',
-    tags: ['Rust', 'Graph algorithms', 'Jaccard similarity', 'Centrality analysis'],
+    details: [
+      'Studied relationships between job titles, company locations, and salaries.',
+      'Used graph-based methods to compare roles and location patterns.',
+      'Explored similarity and centrality measures as part of the analysis.',
+    ],
+    tools: ['Rust', 'Graph algorithms', 'Jaccard similarity', 'Centrality analysis'],
   },
   {
     title: 'Predicting English Premier League Winner',
     dateRange: 'Nov 2023 - Dec 2023',
+    shortDescription:
+      'Machine learning project predicting the 2023-2024 Premier League winner.',
     description:
       'Built a machine learning project to predict the 2023-2024 English Premier League winner. Used match statistics, feature engineering, and model evaluation to connect data science with football analysis.',
-    tags: ['Python', 'Random forest', 'Feature engineering', 'SHAP'],
+    details: [
+      'Used match statistics to build a prediction workflow for the Premier League.',
+      'Applied feature engineering and model evaluation to compare prediction behavior.',
+      'Used SHAP concepts to connect model outputs back to football analysis.',
+    ],
+    tools: ['Python', 'Random forest', 'Feature engineering', 'SHAP'],
   },
 ];
 
@@ -154,6 +234,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Mathematical Statistics',
     professor: 'Dan Weiner',
     concentration: 'Statistics',
+    category: 'Statistics',
     difficulty: 5,
     learningValue: 5,
     enjoyment: 4,
@@ -165,6 +246,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Spark! Data Science X-Lab Practicum',
     professor: 'Bahar Bazargani',
     concentration: 'DS',
+    category: 'Data Science',
     difficulty: 2,
     learningValue: 3,
     enjoyment: 3,
@@ -176,6 +258,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Community Writing',
     professor: 'Jessica Bozek',
     concentration: 'Writing',
+    category: 'Writing',
     difficulty: 1,
     learningValue: 2,
     enjoyment: 4,
@@ -187,6 +270,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Introduction to Machine Learning and AI',
     professor: 'Kevin Gold',
     concentration: 'DS',
+    category: 'Data Science',
     difficulty: 3,
     learningValue: 3,
     enjoyment: 2,
@@ -198,6 +282,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Algorithms for Data Science',
     professor: 'Aldo Pacchiano',
     concentration: 'DS, CS',
+    category: 'Data Science',
     difficulty: 5,
     learningValue: 3,
     enjoyment: 1,
@@ -209,6 +294,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Data, Society and Ethics',
     professor: 'Seth Villegas',
     concentration: 'DS, Ethics',
+    category: 'Data Science',
     difficulty: 2,
     learningValue: 2,
     enjoyment: 2,
@@ -220,6 +306,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Religions of Asia',
     professor: 'April Hughes',
     concentration: 'Religion',
+    category: 'Other',
     difficulty: 1,
     learningValue: 3,
     enjoyment: 2,
@@ -231,6 +318,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Probability',
     professor: 'Ankan Ganguly',
     concentration: 'Statistics',
+    category: 'Statistics',
     difficulty: 3,
     learningValue: 2,
     enjoyment: 1,
@@ -242,6 +330,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Data Mechanics',
     professor: 'Scott Ladenheim',
     concentration: 'DS',
+    category: 'Data Science',
     difficulty: 3,
     learningValue: 3,
     enjoyment: 2,
@@ -253,6 +342,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Foundations of Data Science III',
     professor: 'Pawel Przytycki',
     concentration: 'DS, Math',
+    category: 'Data Science',
     difficulty: 3,
     learningValue: 2,
     enjoyment: 2,
@@ -264,6 +354,7 @@ export const courseReviews: CourseReview[] = [
     name: 'World of Greece',
     professor: 'Christopher Ell',
     concentration: 'History',
+    category: 'Other',
     difficulty: 2,
     learningValue: 1,
     enjoyment: 1,
@@ -275,6 +366,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Applied Statistics',
     professor: 'Thomas Enkosky',
     concentration: 'Statistics',
+    category: 'Statistics',
     difficulty: 2,
     learningValue: 2,
     enjoyment: 2,
@@ -286,6 +378,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Programming for Data Science',
     professor: 'Alishah Chator',
     concentration: 'CS',
+    category: 'Data Science',
     difficulty: 4,
     learningValue: 3,
     enjoyment: 1,
@@ -297,6 +390,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Foundations of Data Science II',
     professor: 'Mayank Varia',
     concentration: 'DS, Math',
+    category: 'Data Science',
     difficulty: 3,
     learningValue: 3,
     enjoyment: 2,
@@ -308,6 +402,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Multivariate Calculus',
     professor: 'Ankan Ganguly',
     concentration: 'Math',
+    category: 'Math',
     difficulty: 3,
     learningValue: 3,
     enjoyment: 3,
@@ -319,6 +414,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Basic Probability & Statistics',
     professor: 'Emily Stephen',
     concentration: 'Statistics',
+    category: 'Statistics',
     difficulty: 3,
     learningValue: 2,
     enjoyment: 2,
@@ -330,6 +426,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Foundations of Data Science I',
     professor: 'Tanima Chatterjee',
     concentration: 'DS, Math',
+    category: 'Data Science',
     difficulty: 2,
     learningValue: 3,
     enjoyment: 3,
@@ -341,6 +438,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Introduction to International Relations',
     professor: 'Alexander de la Paz',
     concentration: 'Political Science',
+    category: 'Other',
     difficulty: 2,
     learningValue: 3,
     enjoyment: 3,
@@ -352,6 +450,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Family Snaps and Stories',
     professor: 'Michelle Martinez',
     concentration: 'Writing',
+    category: 'Writing',
     difficulty: 2,
     learningValue: 2,
     enjoyment: 3,
@@ -363,6 +462,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Calculus II',
     professor: 'Ranjan Panth',
     concentration: 'Math',
+    category: 'Math',
     difficulty: 3,
     learningValue: 3,
     enjoyment: 2,
@@ -374,6 +474,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Introduction to Data Science with Python',
     professor: 'Kevin Gold',
     concentration: 'DS, CS',
+    category: 'Data Science',
     difficulty: 2,
     learningValue: 3,
     enjoyment: 3,
@@ -385,6 +486,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Calculus I',
     professor: 'Tasso Kaper',
     concentration: 'Math',
+    category: 'Math',
     difficulty: 2,
     learningValue: 2,
     enjoyment: 3,
@@ -396,6 +498,7 @@ export const courseReviews: CourseReview[] = [
     name: 'American Lives, American Leagues: Sports and Society in Contemporary U.S. Culture',
     professor: 'Max White',
     concentration: 'Writing',
+    category: 'Writing',
     difficulty: 1,
     learningValue: 2,
     enjoyment: 4,
@@ -407,6 +510,7 @@ export const courseReviews: CourseReview[] = [
     name: 'Introductory Biology for Health Sciences',
     professor: 'Michaelyn Hartmann',
     concentration: 'Biology',
+    category: 'Other',
     difficulty: 3,
     learningValue: 3,
     enjoyment: 3,
