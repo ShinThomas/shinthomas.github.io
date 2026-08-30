@@ -751,7 +751,7 @@ a:hover {
 
 .course-details {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.5fr) minmax(12rem, 0.55fr);
+  grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.5fr);
   gap: 1.4rem;
   overflow: hidden;
   color: var(--text-muted);

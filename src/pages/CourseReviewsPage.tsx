@@ -52,7 +52,7 @@ export function CourseReviewsPage() {
     <section className="page-fade" aria-labelledby="courses-title">
       <header className="section-header course-header">
         <h1 id="courses-title">Course Reviews</h1>
-        <p>Courses I've taken at BU — ratings are highly subjective.</p>
+        <p>Fun and not fun classes</p>
       </header>
 
       <nav className="course-filters" aria-label="Course category filters">
@@ -120,10 +120,6 @@ export function CourseReviewsPage() {
                     <p>{course.semester}</p>
                     <p>{course.concentration}</p>
                     <p>Professor: {course.professor}</p>
-                  </div>
-                  <div>
-                    <h2>Written Review</h2>
-                    <p>{course.review ?? 'No written review yet.'}</p>
                   </div>
                 </div>
               </div>

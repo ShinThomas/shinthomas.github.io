@@ -5,7 +5,6 @@ export function Footer() {
     <footer className="site-footer">
       <div className="footer-inner">
         <p>© {new Date().getFullYear()} {profile.name}</p>
-        <p>Data science, statistics, and useful problems.</p>
       </div>
     </footer>
   );

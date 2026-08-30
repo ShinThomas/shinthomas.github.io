@@ -132,12 +132,8 @@ export function ProjectsPage() {
   return (
     <section className="page-fade" aria-labelledby="projects-title">
       <header className="section-header">
-        <p className="meta-line">Selected Work</p>
-        <h1 id="projects-title">Projects across data, models, systems, and research.</h1>
-        <p>
-          A running index of applied work, from computational biology and healthcare-oriented
-          systems to sports analytics, NLP, product data, and statistics.
-        </p>
+        <h1 id="projects-title">Projects</h1>
+        <p>Cool stuff I've worked on</p>
       </header>
 
       <div className="project-grid">

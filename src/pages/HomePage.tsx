@@ -5,7 +5,6 @@ import { socialLinks } from '../data/portfolio';
 const contactLinks = socialLinks.filter(({ label }) =>
   ['GitHub', 'LinkedIn', 'Instagram'].includes(label),
 );
-const beliProfileUrl = '#replace-with-beli-profile-url';
 
 export function HomePage() {
   const [formStatus, setFormStatus] = useState('');
@@ -34,16 +33,11 @@ export function HomePage() {
         along the way.
       </p>
 
-      <section className="home-outside" aria-labelledby="outside-title">
-        <h2 id="outside-title">Outside of data</h2>
+      <section className="home-outside">
         <p>
           Outside of my computer, I'm a huge sports fan and spend too much time restaurant hopping.
-          Follow my{' '}
-          <a href={beliProfileUrl} target="_blank" rel="noreferrer">
-            Beli journey
-          </a>{' '}
-          if you want to see where I've been eating. Please send me a message below if you want to
-          connect!
+          Follow my Beli journey (@shinthomas) if you want to see where I've been eating. Please
+          send me a message below if you want to connect!
         </p>
       </section>
 

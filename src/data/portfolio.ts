@@ -21,7 +21,6 @@ export type CourseReview = {
   learningValue: number;
   enjoyment: number;
   coveredMaterial: string[];
-  review?: string;
 };
 
 export type SocialLink = {
@@ -56,7 +55,67 @@ export const socialLinks: SocialLink[] = [
 
 export const projects: ProjectItem[] = [
   {
-    title: 'Lverage Project Data Pipeline',
+    title: 'LUCID',
+    dateRange: '2026',
+    shortDescription:
+      'Precision oncology project investigating whether tumor gene-expression profiles can improve recurrence-risk stratification in early-stage lung adenocarcinoma.',
+    description:
+      'An end-to-end precision oncology project combining clinical and transcriptomic data to study recurrence risk and tumor biology in early-stage lung adenocarcinoma.',
+    details: [
+      'Built an end-to-end analysis pipeline using clinical and transcriptomic data from 204 early-stage lung adenocarcinoma patients.',
+      'Developed leakage-safe survival modeling workflows comparing clinical and RNA-based recurrence-risk prediction, with RNA models achieving a mean held-out C-index of 0.727 versus 0.677 for the clinical baseline.',
+      'Identified 311 clinically adjusted recurrence-associated genes and characterized a strong cell-cycle and proliferation program associated with aggressive tumor biology.',
+      'Developed an interpretable 28-gene proliferation signature and evaluated it in an independent cohort of 124 LUAD patients, including stage-adjusted external validation.',
+    ],
+    tools: [
+      'Python',
+      'pandas',
+      'NumPy',
+      'scikit-learn',
+      'lifelines',
+      'Survival Analysis',
+      'Cox Regression',
+      'PCA',
+      'Cross-Validation',
+      'Transcriptomics',
+      'Biomarker Discovery',
+      'Pathway Enrichment',
+      'External Validation',
+    ],
+  },
+  {
+    title: 'Tempo',
+    dateRange: '2026 – Present',
+    shortDescription:
+      'AI-assisted workforce scheduling system that converts employee availability and staffing requirements into optimized weekly schedules.',
+    description:
+      'A full-stack scheduling system that combines natural-language availability parsing with deterministic constraint optimization and schedule validation.',
+    details: [
+      'Built a full-stack workforce scheduling system that transforms manager inputs and employee availability into validated weekly schedules.',
+      'Designed a hybrid AI and optimization architecture where an LLM extracts structured availability while an OR-Tools CP-SAT solver deterministically enforces coverage, availability, hour limits, and scheduling constraints.',
+      'Developed multi-objective scheduling logic for fairness, target hours, continuous shifts, opening and closing distribution, short-shift avoidance, and employee preferences.',
+      'Added schedule validation and deterministic infeasibility diagnostics to explain when staffing requirements cannot be satisfied.',
+      'Built a React and FastAPI workflow supporting both live AI parsing and manual worker entry, with reviewed inputs before schedule generation.',
+    ],
+    tools: [
+      'Python',
+      'OR-Tools',
+      'CP-SAT',
+      'Constraint Optimization',
+      'FastAPI',
+      'React',
+      'TypeScript',
+      'OpenAI API',
+      'Structured Outputs',
+      'Pydantic',
+      'Scheduling Algorithms',
+      'Multi-Objective Optimization',
+      'Validation',
+      'Testing',
+    ],
+  },
+  {
+    title: 'Lverage',
     dateRange: 'May 2026 - Present',
     shortDescription:
       'Comparative genomics pipeline for predicting transcription factor DNA-binding motifs.',
@@ -68,62 +127,6 @@ export const projects: ProjectItem[] = [
       'Built a GUI layer to make the workflow easier to run and inspect.',
     ],
     tools: ['Data pipelines', 'OOP', 'Bioinformatics', 'GUI development'],
-  },
-  {
-    title: 'Boston Cyclists Union - Biking Safety',
-    dateRange: 'Jan 2026 - May 2026',
-    shortDescription:
-      'ETL and geospatial analysis combining ridership, bike count, and crash records.',
-    description:
-      'Built ETL pipelines combining Bluebikes ridership, municipal bike counts, and crash records into a centralized analytics database. Analyzed temporal and geospatial patterns to support bike safety mapping and infrastructure insights.',
-    details: [
-      'Combined Bluebikes ridership, municipal bike counts, and crash records into one analytics workflow.',
-      'Prepared data for temporal and geospatial analysis around biking safety patterns.',
-      'Used the resulting dataset to support mapping and infrastructure-oriented insights.',
-    ],
-    tools: ['ETL', 'Geospatial analysis', 'Exploratory data analysis', 'SQL'],
-  },
-  {
-    title: 'Detecting Sarcasm',
-    dateRange: 'Feb 2026 - Apr 2026',
-    shortDescription:
-      'Comparison of classical machine learning and transformer-based models for sarcasm detection.',
-    description:
-      'Compared classical machine learning and transformer-based models for sarcasm detection in news headlines. Explored how different text representations affect performance on subtle language cues.',
-    details: [
-      'Compared traditional text representations with transformer-based approaches.',
-      'Focused on news headlines, where sarcasm depends on subtle language cues.',
-      'Evaluated how model choice and representation changed performance.',
-    ],
-    tools: ['TF-IDF', 'BERT', 'Machine learning', 'NLP'],
-  },
-  {
-    title: 'Ecommerce Conversion Analytics',
-    dateRange: 'Mar 2026 - Apr 2026',
-    shortDescription:
-      'Product analytics and machine learning pipeline for conversion behavior.',
-    description:
-      'Built a product analytics and machine learning pipeline on millions of user events. Analyzed conversion funnels and developed a model to identify high-intent users.',
-    details: [
-      'Worked with millions of user events to study product conversion behavior.',
-      'Analyzed funnel patterns and signals associated with high-intent users.',
-      'Developed a modeling workflow around feature engineering and conversion metrics.',
-    ],
-    tools: ['Product analytics', 'Logistic regression', 'Feature engineering', 'A/B metrics'],
-  },
-  {
-    title: 'NHL Power Play Success Prediction',
-    dateRange: 'Dec 2025',
-    shortDescription:
-      'Sports analytics model predicting whether NHL power plays result in goals.',
-    description:
-      'Predicted whether NHL power play opportunities would result in goals using game context and team performance data. The project combined sports analytics with practical model evaluation.',
-    details: [
-      'Modeled power play outcomes using game context and team performance data.',
-      'Framed the task as a classification problem with practical evaluation concerns.',
-      'Used hockey data as a way to connect sports intuition with model behavior.',
-    ],
-    tools: ['Sports analytics', 'Classification', 'Feature engineering', 'Model evaluation'],
   },
   {
     title: 'Physical Therapy Intelligence',
@@ -140,6 +143,20 @@ export const projects: ProjectItem[] = [
     tools: ['OpenCV', 'RAG', 'PostgreSQL', 'Real-time inference'],
   },
   {
+    title: 'Boston Cyclists Union — Biking Safety',
+    dateRange: 'Jan 2026 - May 2026',
+    shortDescription:
+      'ETL and geospatial analysis combining ridership, bike count, and crash records.',
+    description:
+      'Built ETL pipelines combining Bluebikes ridership, municipal bike counts, and crash records into a centralized analytics database. Analyzed temporal and geospatial patterns to support bike safety mapping and infrastructure insights.',
+    details: [
+      'Combined Bluebikes ridership, municipal bike counts, and crash records into one analytics workflow.',
+      'Prepared data for temporal and geospatial analysis around biking safety patterns.',
+      'Used the resulting dataset to support mapping and infrastructure-oriented insights.',
+    ],
+    tools: ['ETL', 'Geospatial analysis', 'Exploratory data analysis', 'SQL'],
+  },
+  {
     title: 'Formula 1 Tire Strategy Optimizer',
     dateRange: 'Oct 2025 - Nov 2025',
     shortDescription:
@@ -152,62 +169,6 @@ export const projects: ProjectItem[] = [
       'Presented model outputs in a way that connects data with race-day tradeoffs.',
     ],
     tools: ['FastF1', 'Simulation', 'Optimization', 'Data visualization'],
-  },
-  {
-    title: 'MLB Predicting WAR',
-    dateRange: 'Sep 2025',
-    shortDescription:
-      'Baseball modeling project exploring which metrics help predict Wins Above Replacement.',
-    description:
-      'Explored which baseball metrics are most useful for predicting Wins Above Replacement. The project combined data cleaning, feature selection, and machine learning with baseball analysis.',
-    details: [
-      'Cleaned baseball performance data for a WAR prediction workflow.',
-      'Explored feature selection as part of understanding which metrics mattered most.',
-      'Used model interpretation to connect results back to baseball analysis.',
-    ],
-    tools: ['Feature selection', 'Regression', 'Data cleaning', 'Model interpretation'],
-  },
-  {
-    title: 'Linear Regression Model',
-    dateRange: 'Jun 2025',
-    shortDescription:
-      'Linear regression implemented from scratch with gradient descent.',
-    description:
-      'Implemented linear regression from scratch in Python using gradient descent. Used a simple study-time dataset to train the model and visualize the best-fit line.',
-    details: [
-      'Implemented linear regression directly rather than relying on a high-level model API.',
-      'Used gradient descent to fit a simple study-time dataset.',
-      'Visualized the fitted line to make the optimization behavior easier to understand.',
-    ],
-    tools: ['Python', 'Gradient descent', 'NumPy', 'Data visualization'],
-  },
-  {
-    title: 'Data Science Job Salaries Analysis',
-    dateRange: 'Nov 2024 - Dec 2024',
-    shortDescription:
-      'Graph-based analysis of job titles, locations, and salaries in data science.',
-    description:
-      'Analyzed relationships between job titles, company locations, and salaries in the data science job market. Used graph-based analysis and salary comparisons to study role and location patterns.',
-    details: [
-      'Studied relationships between job titles, company locations, and salaries.',
-      'Used graph-based methods to compare roles and location patterns.',
-      'Explored similarity and centrality measures as part of the analysis.',
-    ],
-    tools: ['Rust', 'Graph algorithms', 'Jaccard similarity', 'Centrality analysis'],
-  },
-  {
-    title: 'Predicting English Premier League Winner',
-    dateRange: 'Nov 2023 - Dec 2023',
-    shortDescription:
-      'Machine learning project predicting the 2023-2024 Premier League winner.',
-    description:
-      'Built a machine learning project to predict the 2023-2024 English Premier League winner. Used match statistics, feature engineering, and model evaluation to connect data science with football analysis.',
-    details: [
-      'Used match statistics to build a prediction workflow for the Premier League.',
-      'Applied feature engineering and model evaluation to compare prediction behavior.',
-      'Used SHAP concepts to connect model outputs back to football analysis.',
-    ],
-    tools: ['Python', 'Random forest', 'Feature engineering', 'SHAP'],
   },
 ];
 
