@@ -115,12 +115,6 @@ export function CourseReviewsPage() {
                       ))}
                     </ul>
                   </div>
-                  <div>
-                    <h2>Course Info</h2>
-                    <p>{course.semester}</p>
-                    <p>{course.concentration}</p>
-                    <p>Professor: {course.professor}</p>
-                  </div>
                 </div>
               </div>
             </article>
