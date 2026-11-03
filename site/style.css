@@ -262,3 +262,22 @@ body { font-weight: 375; }
   .timeline-item .panel:has(.timeline-logo) { padding-left: 24px; }
   .timeline-logo { position: static; display: block; margin-bottom: 10px; }
 }
+
+body { isolation: isolate; }
+.pixel-field {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 9px 9px, #a5a5a526 0 1px, transparent 1.4px) 0 0 / 18px 18px;
+  mask-image: linear-gradient(to bottom, black calc(100% - 170px), transparent);
+}
+.pixel-field canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; }
+.pixel-nav-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 100;
+}
