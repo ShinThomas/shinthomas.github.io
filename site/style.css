@@ -148,8 +148,8 @@ main > .experience-section { margin: 0; padding-block: 64px; }
   transform-origin: top;
 }
 .timeline .timeline-item { padding: 0; width: calc(50% - 48px); }
-.timeline .timeline-item:nth-child(even) { justify-self: start; text-align: right; }
-.timeline .timeline-item:nth-child(odd) { justify-self: end; text-align: left; }
+.timeline .timeline-item:nth-child(even) { justify-self: start; text-align: right; --logo-left: 16px; --logo-right: auto; --logo-padding-left: 66px; --logo-padding-right: 24px; }
+.timeline .timeline-item:nth-child(odd) { justify-self: end; text-align: left; --logo-left: auto; --logo-right: 16px; --logo-padding-left: 24px; --logo-padding-right: 66px; }
 .timeline-item .panel { position: relative; padding: 24px; }
 .timeline .timeline-item:nth-child(n)::after {
   content: "";
@@ -214,7 +214,7 @@ main > .experience-section { margin: 0; padding-block: 64px; }
   .experience-section .center { font-size: 24px; }
   .timeline { gap: 64px; }
   .timeline .timeline-line { left: 32px; transform: none; }
-  .timeline .timeline-item:nth-child(n) { width: calc(100% - 64px); justify-self: end; text-align: left; }
+  .timeline .timeline-item:nth-child(n) { width: calc(100% - 64px); justify-self: end; text-align: left; --logo-left: auto; --logo-right: 16px; --logo-padding-left: 24px; --logo-padding-right: 66px; }
   .timeline .timeline-item:nth-child(n)::after { left: -40px; right: auto; }
   .timeline h3, .projects-section .entry h3, .education h3 { font-size: 20px; }
   .education { gap: 16px; padding: 24px; }
@@ -251,17 +251,17 @@ body { font-weight: 375; }
 .credentials, .intro, .timeline .date { font-weight: 475; }
 .timeline-logo {
   position: absolute;
-  inset: 16px auto auto 16px;
+  inset: 16px var(--logo-right) auto var(--logo-left);
   width: 40px;
   height: 40px;
   object-fit: contain;
   border-radius: 8px;
 }
-.timeline-item .panel:has(.timeline-logo) { padding-left: 66px; }
-@media (width < 768px) {
-  .timeline-item .panel:has(.timeline-logo) { padding-left: 24px; }
-  .timeline-logo { position: static; display: block; margin-bottom: 10px; }
+.timeline-item .panel:has(.timeline-logo) {
+  padding-left: var(--logo-padding-left);
+  padding-right: var(--logo-padding-right);
 }
+.timeline-item .panel { overflow-wrap: anywhere; }
 
 body { isolation: isolate; }
 .pixel-field {
@@ -280,4 +280,26 @@ body { isolation: isolate; }
   height: 100vh;
   pointer-events: none;
   z-index: 100;
+}
+
+/* Compact outer-corner marks share the original logo footprint. */
+.timeline-logo-readable { border-radius: 4px; }
+.timeline-logo[src="/equitable.webp"] { background: #466d4c; padding: 2px; }
+.timeline-logo[src="/steme.jpg"] {
+  width: 44px;
+  height: 44px;
+  margin-top: -2px;
+}
+.equitable-mark {
+  overflow: hidden;
+  background: #68986d;
+  border-radius: 4px;
+}
+.equitable-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 2px;
+  filter: drop-shadow(.2px 0 white) drop-shadow(-.2px 0 white);
 }
